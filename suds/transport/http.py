@@ -136,6 +136,13 @@ class HttpTransport(Transport):
         @rtype: [Handler,...]
         """
         handlers = []
+
+        # FyF block
+        unverified_context = ssl._create_unverified_context()
+        unverified_handler = u2.HTTPSHandler(context=unverified_context)
+        handlers.append(unverified_handler)
+        # End FyF block
+
         handlers.append(u2.ProxyHandler(self.proxy))
         return handlers
 
