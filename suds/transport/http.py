@@ -22,6 +22,7 @@ import urllib.request as u2
 from urllib.error import HTTPError
 from base64 import b64encode
 import socket
+import ssl
 from suds.transport import Transport, TransportError, Reply
 from suds.properties import Unskin
 from http.cookiejar import CookieJar
